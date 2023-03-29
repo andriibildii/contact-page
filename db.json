@@ -1,0 +1,24 @@
+{
+  "messages": [
+    {
+      "id": "2023-03-29T13:38:57.221Z",
+      "data": {
+        "firstName": "Test",
+        "lastName": "Test",
+        "email": "test@gmail.com",
+        "phoneNumber": "+380981111111",
+        "subject": [
+          "subject1",
+          "subject4"
+        ],
+        "message": "Test"
+      }
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "2023-03-29T13:39:20.254Z",
+      "email": "testTest@gmail.com"
+    }
+  ]
+}
