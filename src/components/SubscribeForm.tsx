@@ -44,34 +44,38 @@ export default function SubscribeForm() {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <p className="pl-[10px] text-red-500">
-                    {errors.email?.message}
-                    {isError && error?.message}
-                </p>
-                <div className="flex flex-wrap items-center justify-start rounded-[25px]">
-                    <div className="h-[39px] rounded-tl-[4px] rounded-bl-[4px] bg-[#1A1A1A] py-[11px] pr-[45px] pl-[10px] text-[#616161]">
-                        <input
-                            {...register("email")}
-                            placeholder="Your email address"
-                            className="w-[107px] bg-[#1A1A1A] text-[11px] font-normal italic leading-4"
-                        />
-                    </div>
-
-                    <div className="flex h-[39px] items-center justify-center rounded-tr-[4px] rounded-br-[4px] bg-black py-[11px] px-[10px]">
-                        {isSuccess && (
-                            <MdDone className="text-lg text-green-600" />
-                        )}
-                        <input
-                            type="submit"
-                            value={`${isSuccess ? "Done!" : "Subscribe"}`}
-                            className="w-[84px] text-xs font-medium leading-[18px]"
-                            disabled={isLoading}
-                        />
-                    </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <p className="pl-[10px] text-red-500">
+                {errors.email?.message}
+                {isError && error?.message}
+            </p>
+            <div className="flex flex-wrap items-center justify-start rounded-[25px]">
+                <div
+                    className={`rounded-tl-[4px] rounded-bl-[4px] bg-[#1A1A1A] py-[11px] pr-[45px] pl-[10px] text-[#616161] ${
+                        isError || errors.email ? "border border-red-700" : ""
+                    } h-[38px]`}
+                >
+                    <input
+                        {...register("email")}
+                        placeholder="Your email address"
+                        className="flex w-[107px] items-center justify-center bg-[#1A1A1A] text-center text-[11px] font-normal italic leading-4"
+                    />
                 </div>
-            </form>
-        </div>
+
+                <div
+                    className={`flex h-[38px] items-center justify-center rounded-tr-[4px] rounded-br-[4px] bg-black py-[11px] px-[10px] ${
+                        isSuccess && "border border-green-700"
+                    }`}
+                >
+                    {isSuccess && <MdDone className="text-lg text-green-600" />}
+                    <input
+                        type="submit"
+                        value={`${isSuccess ? "Done!" : "Subscribe"}`}
+                        className="w-[84px] text-xs font-medium leading-[18px]"
+                        disabled={isLoading}
+                    />
+                </div>
+            </div>
+        </form>
     );
 }

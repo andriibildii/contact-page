@@ -4,16 +4,18 @@ export default function Contact() {
     return (
         <div className="bg-[#F5F5F5]">
             {/* CONTACT HEADER */}
-            <div className="mb-5 flex w-full flex-col items-center justify-center pt-[14px]">
-                <h2 className="text-2xl font-bold leading-9">Contact Us</h2>
-                <div className="text-center text-sm font-medium leading-[21px] text-[#717171]">
-                    <p className="pt-[10px]">Any questions or remarks?</p>
+            <div className="mb-[25px] flex w-full flex-col items-center justify-center pt-[14px] xl:mb-[25px]">
+                <h2 className="text-2xl font-bold leading-9 xl:text-[40px] xl:leading-[60px]">
+                    Contact Us
+                </h2>
+                <div className="flex flex-col items-center justify-center pt-[10px] text-sm font-medium leading-[21px] text-[#717171] xl:flex-row xl:pb-[50px]">
+                    <p className="">Any questions or remarks?</p>
                     <p>Just write us a message!</p>
                 </div>
             </div>
 
             {/* CONTACT FORM */}
-            <div className="pb-[50px]">
+            <div className="flex justify-center pb-[50px]">
                 <ContactForm />
             </div>
         </div>

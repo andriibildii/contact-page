@@ -9,6 +9,7 @@ module.exports = {
         fontFamily: {
             poppins: "Poppins, serif",
             inter: "Inter, serif",
+            manrope: "Manrope, serif",
         },
     },
     plugins: [require("flowbite/plugin")],

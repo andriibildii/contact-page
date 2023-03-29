@@ -66,153 +66,160 @@ export default function ContactForm() {
     const subject = ["subject1", "subject2", "subject3", "subject4"];
 
     return (
-        <div className="mx-5 flex flex-wrap bg-white md:flex-nowrap">
-            <div className="mx-[5px] mb-[30px] mt-[5px] w-full md:m-[10px] md:w-1/2">
-                <ContactInfo />
-            </div>
+        <>
+            <div className="mx-5 flex max-w-[1196px] flex-wrap bg-white md:flex-nowrap">
+                <div className="mx-[5px] mb-[30px] mt-[5px] w-full md:m-[10px] lg:max-w-[490px]">
+                    <ContactInfo />
+                </div>
 
-            <div className="w-full px-[21px] md:w-1/2 md:p-1">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="flex flex-wrap gap-x-1 xl:gap-x-[39px]">
-                        <div className="flex w-full flex-col pb-5 text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px]">
-                            <label className="leading-5">First Name</label>
-                            <input
-                                {...register("firstName")}
-                                type="text"
-                                className={`appearance-none border-0 border-b bg-transparent px-0  pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:pt-[5px] focus:pb-[10px] focus:text-black focus:outline-none focus:ring-0 ${
-                                    errors.firstName &&
-                                    "border-red-600 focus:border-red-600"
-                                }`}
-                            />
-                            {errors.firstName && (
-                                <span className="text-red-500">
-                                    {errors.firstName?.message}
-                                </span>
-                            )}
-                        </div>
-
-                        <div className="flex w-full flex-col pb-5 text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px]">
-                            <label>Last Name</label>
-                            <input
-                                {...register("lastName")}
-                                type="text"
-                                className={`appearance-none border-0 border-b bg-transparent px-0  pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 ${
-                                    errors.lastName &&
-                                    "border-red-600 focus:border-red-600"
-                                }`}
-                            />
-                            {errors.lastName && (
-                                <span className="text-red-500">
-                                    {errors.lastName?.message}
-                                </span>
-                            )}
-                        </div>
-
-                        <div className="flex w-full flex-col pb-5 text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px]">
-                            <label>Email</label>
-                            <input
-                                {...register("email")}
-                                type="tel"
-                                className={`appearance-none border-0 border-b bg-transparent px-0  pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 ${
-                                    errors.email &&
-                                    "border-red-600 focus:border-red-600"
-                                }`}
-                            />
-                            {errors.email && (
-                                <span className="text-red-500">
-                                    {errors.email?.message}
-                                </span>
-                            )}
-                        </div>
-
-                        <div className="flex w-full flex-col pb-[25px] text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px]">
-                            <label>Phone Number</label>
-                            <input
-                                {...register("phoneNumber")}
-                                type="phoneNumber"
-                                className={`appearance-none border-0 border-b border-black bg-transparent  px-0 pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 ${
-                                    errors.lastName &&
-                                    "border-red-600 focus:border-red-600"
-                                }`}
-                            />
-                            {errors.phoneNumber && (
-                                <span className="text-red-500">
-                                    {errors.phoneNumber?.message}
-                                </span>
-                            )}
-                        </div>
-
-                        <div className="flex w-full flex-col ">
-                            <label className="text-sm font-semibold">
-                                Select Subject?
-                            </label>
-                            <div className="flex flex-wrap justify-center gap-y-[14px] gap-x-5 pt-[10px]">
-                                {subject.map((value) => (
-                                    <div
-                                        key={value}
-                                        className="flex items-center gap-[10px] text-xs font-normal leading-[20px]"
-                                    >
-                                        <input
-                                            className="flex h-4 w-4 flex-col rounded-full border-none bg-[#E0E0E0] text-black focus:ring-white"
-                                            type="checkbox"
-                                            value={value}
-                                            {...register("subject")}
-                                        />
-
-                                        <p>General Inquiry</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="flex w-full flex-col pt-[35px] pb-[25px]">
-                            <div className="group relative z-0 w-full">
+                <div className="w-full px-[21px] md:py-[10px] lg:px-[10px] xl:py-[60px] xl:px-[50px]">
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="flex flex-wrap xl:items-stretch xl:justify-between">
+                            <div className="flex w-full flex-col pb-5 text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px] xl:pb-[45px]">
+                                <label className="leading-5">First Name</label>
                                 <input
-                                    {...register("message")}
+                                    {...register("firstName")}
                                     type="text"
-                                    name="message"
-                                    id="message"
-                                    className="peer block w-full appearance-none border-0 border-b bg-transparent px-0 pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 dark:border-gray-600"
-                                    placeholder=" "
-                                />
-                                <label
-                                    htmlFor="message"
-                                    className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-sm
-									peer-focus:font-medium
-									peer-focus:text-black"
-                                >
-                                    Write your message..
-                                </label>
-                            </div>
-                        </div>
-                        <div className="w-full">
-                            <div className="flex items-center justify-center gap-[6.4px]">
-                                <input
-                                    type="submit"
-                                    value={`${
-                                        isSuccess ? "Done!" : "Send Message"
+                                    className={`appearance-none border-0 border-b bg-transparent px-0  pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:pt-[5px] focus:pb-[10px] focus:text-black focus:outline-none focus:ring-0 ${
+                                        errors.firstName &&
+                                        "border-red-600 focus:border-red-600"
                                     }`}
-                                    className={`h-[38.21px] w-[278px] rounded-[3.20093px] bg-black text-[12.95px] font-medium leading-[19.42px] text-white shadow-md drop-shadow-[0_0_8.96262px_rgba(0,0,0,0.12)] ${
-                                        isSuccess && "shadow-green-600"
-                                    }`}
-                                    disabled={isLoading}
                                 />
-                                {isSuccess && (
-                                    <MdDone className="text-lg text-green-600" />
-                                )}
-                                {isError && (
-                                    <span className="font-medium text-red-500">
-                                        {error?.message}
+                                {errors.firstName && (
+                                    <span className="text-red-500">
+                                        {errors.firstName?.message}
                                     </span>
                                 )}
                             </div>
 
-                            <div className="relative bottom-[15px] left-[55.43px] h-[52.15px] w-[104.4px] rotate-[1.75deg] pb-[50px]">
-                                <img src={SendLetterIcon} alt="ellipse one" />
+                            <div className="flex w-full flex-col pb-5 text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px] xl:pb-[45px]">
+                                <label>Last Name</label>
+                                <input
+                                    {...register("lastName")}
+                                    type="text"
+                                    className={`appearance-none border-0 border-b bg-transparent px-0  pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 ${
+                                        errors.lastName &&
+                                        "border-red-600 focus:border-red-600"
+                                    }`}
+                                />
+                                {errors.lastName && (
+                                    <span className="text-red-500">
+                                        {errors.lastName?.message}
+                                    </span>
+                                )}
+                            </div>
+
+                            <div className="flex w-full flex-col pb-5 text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px] xl:pb-[45px]">
+                                <label>Email</label>
+                                <input
+                                    {...register("email")}
+                                    type="tel"
+                                    className={`appearance-none border-0 border-b bg-transparent px-0  pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 ${
+                                        errors.email &&
+                                        "border-red-600 focus:border-red-600"
+                                    }`}
+                                />
+                                {errors.email && (
+                                    <span className="text-red-500">
+                                        {errors.email?.message}
+                                    </span>
+                                )}
+                            </div>
+
+                            <div className="flex w-full flex-col pb-[25px] text-xs font-medium leading-[20px] text-gray-500 focus-within:text-black xl:w-[278px] xl:pb-[45px]">
+                                <label>Phone Number</label>
+                                <input
+                                    {...register("phoneNumber")}
+                                    type="phoneNumber"
+                                    className={`appearance-none border-0 border-b border-gray-500 bg-transparent  px-0 pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 ${
+                                        errors.lastName &&
+                                        "border-red-600 focus:border-red-600"
+                                    }`}
+                                />
+                                {errors.phoneNumber && (
+                                    <span className="text-red-500">
+                                        {errors.phoneNumber?.message}
+                                    </span>
+                                )}
+                            </div>
+
+                            <div className="flex w-full flex-col">
+                                <label className="text-sm font-semibold xl:pb-[14.26px]">
+                                    Select Subject?
+                                </label>
+                                <div className="flex flex-wrap justify-center gap-y-[14px] gap-x-5 pt-[10px] lg:justify-evenly xl:justify-between">
+                                    {subject.map((value) => (
+                                        <div
+                                            key={value}
+                                            className="flex items-center gap-[10px] text-xs font-normal leading-[20px]"
+                                        >
+                                            <input
+                                                className="flex h-4 w-4 flex-col rounded-full border-none bg-[#E0E0E0] text-black focus:ring-white"
+                                                type="checkbox"
+                                                value={value}
+                                                {...register("subject")}
+                                            />
+
+                                            <p>General Inquiry</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex w-full flex-col pt-[35px] pb-[25px] xl:pt-[45px] xl:pb-[45px]">
+                                <div className="group relative z-0 w-full">
+                                    <input
+                                        {...register("message")}
+                                        type="text"
+                                        name="message"
+                                        id="message"
+                                        className="peer block w-full appearance-none border-0 border-b bg-transparent px-0 pt-1 pb-[11px] text-sm text-[#8D8D8D] focus:border-b-2 focus:border-black focus:text-black focus:outline-none focus:ring-0 dark:border-gray-600"
+                                        placeholder=" "
+                                    />
+                                    <label
+                                        htmlFor="message"
+                                        className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xs text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75
+									peer-focus:text-sm
+									peer-focus:font-medium peer-focus:text-black"
+                                    >
+                                        Write your message..
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="w-full">
+                                <div className="flex items-center justify-center gap-[6.4px] xl:justify-end">
+                                    <input
+                                        type="submit"
+                                        value={`${
+                                            isSuccess ? "Done!" : "Send Message"
+                                        }`}
+                                        className={`${
+                                            isSuccess && "shadow-green-600"
+                                        } flex-rew flex w-full items-center justify-center rounded-[3.2px] bg-black py-[9.6028px] px-[30.729px] text-[12.95px] font-medium leading-[19px] text-white shadow-md drop-shadow-[0_0_8.96262px_rgba(0,0,0,0.12)] xl:w-auto xl:rounded-[5px] xl:py-[15px] xl:px-12 xl:text-base xl:leading-6`}
+                                        disabled={isLoading}
+                                    />
+                                    {isSuccess && (
+                                        <MdDone className="text-lg text-green-600" />
+                                    )}
+                                    {isError && (
+                                        <span className="font-medium text-red-500">
+                                            {error?.message}
+                                        </span>
+                                    )}
+                                </div>
+                                <div className="flex items-center justify-center xl:justify-end">
+                                    <div className="relative bottom-[15px] -left-[35px] h-[52.15px] w-[104.4px] rotate-[1.75deg] pb-[50px] xl:-left-12 xl:bottom-[55px] xl:w-[350.79px]">
+                                        <img
+                                            src={SendLetterIcon}
+                                            alt="ellipse one"
+                                            className="xl:w-[350.79px]"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
