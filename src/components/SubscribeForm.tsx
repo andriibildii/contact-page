@@ -19,6 +19,8 @@ interface InputSubscription {
 }
 
 export default function SubscribeForm() {
+    // to send data to a temporary server (Post request), use the useMutation hook from the react-query library
+    // by destructuring, we immediately obtain the necessary values
     const { mutate, isLoading, isSuccess, isError, error } = useMutation<
         object,
         any,
@@ -29,6 +31,7 @@ export default function SubscribeForm() {
         },
     });
 
+    // to processing forms, we use the useForm hook from the react-hook-form library
     const {
         handleSubmit,
         register,
@@ -39,7 +42,9 @@ export default function SubscribeForm() {
     });
 
     const onSubmit = (data: InputSubscription) => {
+        // initiating sending data to the server
         mutate({ id: new Date(), email: data?.email });
+        // overwrite the values entered by the user in the form
         reset();
     };
 

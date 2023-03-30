@@ -22,8 +22,8 @@ export default function NavBarNew() {
                     >
                         {/* FULL MENU */}
                         <div className="flex flex-row flex-wrap justify-between pl-5 pr-[23px] pt-[29px] pb-[30px] xl:px-[100px] xl:py-[41px]">
+                            {/* Logo & Navigation*/}
                             <div className="w-full">
-                                {/* Logo & Navigation*/}
                                 <div
                                     className={` ${
                                         open && "text-white lg:text-black"
@@ -108,8 +108,6 @@ export default function NavBarNew() {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* Navigation*/}
-
                                     {/* Mobile menu button*/}
                                     <div className="flex items-center lg:hidden">
                                         <Disclosure.Button>
@@ -126,7 +124,6 @@ export default function NavBarNew() {
                                             )}
                                         </Disclosure.Button>
                                     </div>
-                                    {/* Mobile menu button*/}
                                 </div>
                             </div>
                             {/* Logo & Navigation*/}

@@ -13,6 +13,17 @@
         ],
         "message": "Test"
       }
+    },
+    {
+      "id": "2023-03-30T16:17:29.270Z",
+      "data": {
+        "firstName": "a",
+        "lastName": "a",
+        "email": "a@gmail.com",
+        "phoneNumber": "+380655222222",
+        "subject": false,
+        "message": ""
+      }
     }
   ],
   "subscriptions": [
@@ -27,6 +38,10 @@
     {
       "id": "2023-03-30T12:23:46.234Z",
       "email": "a@gmail.com"
+    },
+    {
+      "id": "2023-03-30T16:17:52.805Z",
+      "email": "test@gmail.com"
     }
   ]
 }

@@ -3,6 +3,7 @@ import PhoneImage from "../assets/images/phoneIcon.svg";
 import MailIcon from "../assets/images/mailIcon.svg";
 import LocationIcon from "../assets/images/locationIcon.svg";
 import SubscribeForm from "./SubscribeForm";
+
 export default function Footer() {
     return (
         <div className="bg-black px-5 pb-[49px] pt-[19px] text-white xl:px-20 xl:pt-20 ">

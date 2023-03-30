@@ -4,7 +4,6 @@ import MailIcon from "../../assets/images/mailIcon.svg";
 import LocationIcon from "../../assets/images/locationIcon.svg";
 import Ellipse1 from "../../assets/images/ellipse1.svg";
 import Ellipse2 from "../../assets/images/ellipse2.svg";
-import Twitter from "../../assets/images/twitter.svg";
 
 export default function ContactInfo() {
     return (
