@@ -2,7 +2,7 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
     return (
-        <div className="bg-[#F5F5F5]">
+        <div className="mt-[83px] bg-[#F5F5F5] lg:mt-0">
             {/* CONTACT HEADER */}
             <div className="mb-[25px] flex w-full flex-col items-center justify-center pt-[14px] xl:mb-[25px]">
                 <h2 className="text-2xl font-bold leading-9 xl:text-[40px] xl:leading-[60px]">

@@ -4,12 +4,14 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 export default function Home() {
     return (
         <div className="flex h-screen flex-col items-center justify-center text-xl">
-            <h1 className="pb-4">
+            <h1 className="pb-4 text-center">
                 Hello! My name is{" "}
                 <span className="font-bold">Andrii Bildii</span>
             </h1>
-            <h2 className="pb-4">It is my Hard-Skills (coding) assessment </h2>
-            <p className="pb-8">
+            <h2 className="pb-4 text-center">
+                It is my Hard-Skills (coding) assessment{" "}
+            </h2>
+            <p className="pb-8 text-center">
                 Please, click to the{" "}
                 <NavLink to="/contact" className="text-blue-600">
                     Contact
