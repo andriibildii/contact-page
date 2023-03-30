@@ -11,11 +11,6 @@ module.exports = {
             inter: "Inter, serif",
             manrope: "Manrope, serif",
         },
-        extend: {
-            backgroundImage: {
-                "hero-pattern": "url('./src/assets/images/Mainhero.svg')",
-            },
-        },
     },
     plugins: [require("flowbite/plugin")],
 };
