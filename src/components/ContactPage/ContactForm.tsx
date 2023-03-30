@@ -207,11 +207,11 @@ export default function ContactForm() {
                                     )}
                                 </div>
                                 <div className="flex items-center justify-center xl:justify-end">
-                                    <div className="relative bottom-[15px] -left-[35px] h-[52.15px] w-[104.4px] rotate-[1.75deg] pb-[50px] xl:-left-12 xl:bottom-[55px] xl:w-[350.79px]">
+                                    <div className="relative bottom-[15px] -left-[35px] h-[52.15px] w-[104.4px] rotate-[1.75deg] pb-[50px] xl:-left-[70px] xl:bottom-[42px] xl:w-[310.79px]">
                                         <img
                                             src={SendLetterIcon}
                                             alt="ellipse one"
-                                            className="xl:w-[350.79px]"
+                                            className="xl:w-[310.79px]"
                                         />
                                     </div>
                                 </div>

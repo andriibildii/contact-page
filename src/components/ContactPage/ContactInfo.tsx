@@ -10,7 +10,7 @@ export default function ContactInfo() {
     return (
         <>
             <div className="flex h-full flex-col items-center justify-center rounded-md bg-black pb-[25px] pt-[15px] text-xs font-normal leading-[18px] text-white xl:items-start xl:justify-start xl:pl-10 xl:pb-[36px] xl:text-base">
-                <div className="text-center xl:pt-[40px] xl:text-start">
+                <div className="text-center xl:pt-[25px] xl:text-start">
                     <h2 className="mb-[6px] text-xl font-semibold leading-[30px] xl:text-[28px] xl:leading-[42px]">
                         Contact Information
                     </h2>
@@ -19,7 +19,7 @@ export default function ContactInfo() {
                     </p>
                 </div>
 
-                <div className="flex flex-col items-center pt-[15.19px] xl:items-start xl:pb-[159px] xl:pt-[111px] xl:pl-[3px]">
+                <div className="flex flex-col items-center pt-[15.19px] xl:items-start xl:pb-[159px] xl:pt-[48px] xl:pl-[3px]">
                     <div className="flex flex-col items-center justify-center xl:flex xl:flex-row xl:items-center ">
                         <img
                             src={PhoneImage}
@@ -31,7 +31,7 @@ export default function ContactInfo() {
                         </a>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center pt-[19px] xl:flex xl:flex-row xl:items-center">
+                    <div className="flex flex-col items-center justify-center pt-[19px] xl:flex xl:flex-row xl:items-center xl:pt-[50px]">
                         <img
                             src={MailIcon}
                             alt="mail"
@@ -42,13 +42,13 @@ export default function ContactInfo() {
                         </a>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center pb-[58px] pt-[16.5px] xl:flex xl:flex-row xl:items-center">
+                    <div className="flex flex-col items-center justify-center pb-[58px] pt-[16.5px] xl:flex xl:flex-row xl:items-start xl:pt-[50px]">
                         <img
                             src={LocationIcon}
                             alt="location"
                             className="mb-[11.5px] xl:mr-[28px] xl:mb-0"
                         />
-                        <p>
+                        <p className="text-center xl:text-left">
                             132 Dartmouth Street Boston, <br /> Massachusetts
                             02156 United States
                         </p>
