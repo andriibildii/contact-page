@@ -27,12 +27,12 @@ export default function NavBarNew() {
                                 <div
                                     className={` ${
                                         open && "text-white lg:text-black"
-                                    } flex justify-between`}
+                                    } flex items-center justify-between`}
                                 >
                                     {/* Logo*/}
                                     <div className="">
                                         <NavLink to="/">
-                                            <h1 className="font-inter text-lg leading-[22px] xl:text-2xl xl:font-extrabold xl:leading-[29.05px]">
+                                            <h1 className=" font-inter text-lg font-extrabold leading-[21.78px] xl:text-2xl xl:font-extrabold xl:leading-[29.05px]">
                                                 Logo Here
                                             </h1>
                                         </NavLink>
