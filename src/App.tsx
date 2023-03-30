@@ -9,7 +9,6 @@ const queryClient = new QueryClient();
 
 function App() {
     return (
-        // Provide the client to the App
         <QueryClientProvider client={queryClient}>
             <Routes>
                 {/* After developing the rest of the pages, must be specified the Route which will indicate the path to the new page */}

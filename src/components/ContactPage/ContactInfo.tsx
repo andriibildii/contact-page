@@ -19,7 +19,7 @@ export default function ContactInfo() {
                     </p>
                 </div>
 
-                <div className="flex flex-col items-center pt-[15.19px] xl:items-start xl:pb-[159px] xl:pt-[48px] xl:pl-[3px]">
+                <div className="flex flex-col items-center pt-[15.19px] xl:items-start xl:pb-[96px] xl:pt-[111px] xl:pl-[3px]">
                     <div className="flex flex-col items-center justify-center xl:flex xl:flex-row xl:items-center ">
                         <img
                             src={PhoneImage}
