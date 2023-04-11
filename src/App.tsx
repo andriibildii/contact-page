@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Contact from "./components/ContactPage/ContactPage";
+import { Toaster } from "react-hot-toast";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -10,6 +11,7 @@ const queryClient = new QueryClient();
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
+            <Toaster />
             <Routes>
                 {/* After developing the rest of the pages, must be specified the Route which will indicate the path to the new page */}
                 <Route path="/" element={<Layout />}>

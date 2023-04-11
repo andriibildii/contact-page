@@ -10,6 +10,8 @@
 
 [Deployed App](https://contact-page-bildii.vercel.app "Deployed App")
 
+[Figma file](https://www.figma.com/file/aZzePusQQ4UmsATOeUEPyR/React-Technical-Assessment?t=noAzwJ6tA61IcfCs-0)
+
 ---
 
 ### Main Technologies used during the produced task:

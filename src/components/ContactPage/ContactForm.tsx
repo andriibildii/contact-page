@@ -2,10 +2,11 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { MdDone } from "react-icons/md";
 import SendLetterIcon from "../../assets/images/sendLetterIcon.svg";
 import ContactInfo from "./ContactInfo";
+import toast from "react-hot-toast";
 
 const phoneRegExp =
     /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)$/;
@@ -37,6 +38,7 @@ interface InputMessage {
 }
 
 export default function ContactForm() {
+    let messageId = "Message";
     // to send data to a temporary server (Post request), use the useMutation hook from the react-query library
     // by destructuring, we immediately obtain the necessary values
     const { mutate, isLoading, isSuccess, isError, error } = useMutation<
@@ -46,6 +48,20 @@ export default function ContactForm() {
     >({
         mutationFn: (message) => {
             return axios.post("http://localhost:4000/messages", message);
+        },
+        onSuccess: () => {
+            toast.success("Message has been send", {
+                duration: 5000,
+                id: messageId,
+            });
+        },
+        onError: (error) => {
+            if (error instanceof AxiosError) {
+                toast.error(error?.message, {
+                    duration: 5000,
+                    id: messageId,
+                });
+            }
         },
     });
 
@@ -60,6 +76,7 @@ export default function ContactForm() {
     });
 
     const onSubmit = (data: InputMessage) => {
+        messageId = toast.loading("Sending...", { id: messageId });
         // initiating sending data to the server
         mutate({
             id: new Date(),
@@ -198,19 +215,9 @@ export default function ContactForm() {
                                     value={`${
                                         isSuccess ? "Done!" : "Send Message"
                                     }`}
-                                    className={`${
-                                        isSuccess && "shadow-green-600"
-                                    } flex-rew flex w-full items-center justify-center rounded-[3.2px] bg-black py-[9.6028px] px-[30.729px] text-[12.95px] font-medium leading-[19px] text-white shadow-md drop-shadow-[0_0_8.96262px_rgba(0,0,0,0.12)] xl:w-auto xl:rounded-[5px] xl:py-[15px] xl:px-12 xl:text-base xl:leading-6`}
+                                    className="flex-rew flex w-full items-center justify-center rounded-[3.2px] bg-black py-[9.6028px] px-[30.729px] text-[12.95px] font-medium leading-[19px] text-white shadow-md drop-shadow-[0_0_8.96262px_rgba(0,0,0,0.12)] disabled:opacity-50 xl:w-auto xl:rounded-[5px] xl:py-[15px] xl:px-12 xl:text-base xl:leading-6"
                                     disabled={isLoading}
                                 />
-                                {isSuccess && (
-                                    <MdDone className="text-lg text-green-600" />
-                                )}
-                                {isError && (
-                                    <span className="font-medium text-red-500">
-                                        {error?.message}
-                                    </span>
-                                )}
                             </div>
                             <div className="flex items-center justify-center xl:justify-end">
                                 <div className="relative bottom-[15px] -left-[35px] h-[52.15px] w-[104.4px] rotate-[1.75deg] pb-[50px] xl:-left-[70px] xl:bottom-[42px] xl:w-[310.79px]">

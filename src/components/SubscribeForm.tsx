@@ -2,8 +2,9 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { MdDone } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const schema = yup
     .object({
@@ -19,6 +20,7 @@ interface InputSubscription {
 }
 
 export default function SubscribeForm() {
+    let subscribeId = "Subscribe";
     // to send data to a temporary server (Post request), use the useMutation hook from the react-query library
     // by destructuring, we immediately obtain the necessary values
     const { mutate, isLoading, isSuccess, isError, error } = useMutation<
@@ -28,6 +30,20 @@ export default function SubscribeForm() {
     >({
         mutationFn: (email) => {
             return axios.post("http://localhost:4000/subscriptions", email);
+        },
+        onSuccess: () => {
+            toast.success("Subscribe has been made", {
+                duration: 5000,
+                id: subscribeId,
+            });
+        },
+        onError: (error) => {
+            if (error instanceof AxiosError) {
+                toast.error(error?.message, {
+                    duration: 5000,
+                    id: subscribeId,
+                });
+            }
         },
     });
 
@@ -42,6 +58,7 @@ export default function SubscribeForm() {
     });
 
     const onSubmit = (data: InputSubscription) => {
+        subscribeId = toast.loading("Sending...", { id: subscribeId });
         // initiating sending data to the server
         mutate({ id: new Date(), email: data?.email });
         // overwrite the values entered by the user in the form
