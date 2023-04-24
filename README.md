@@ -1,6 +1,6 @@
 # Contact Page according Figma file using React
 
-### Mbunity Development technical assessment for React Frontend Engineer.
+### Template of contact page with the ability to send customers information and subscribe to news.
 
 ---
 

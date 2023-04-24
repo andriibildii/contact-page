@@ -10,8 +10,8 @@ export default function Home() {
                 <span className="font-bold">Andrii Bildii</span>
             </h1>
             <h2 className="z-30 pb-4 text-center">
-                This is my implementation of the technical task for the position
-                of React Frontend Engineer{" "}
+                This is Template of contact page with the ability to send
+                customers information and subscribe to news{" "}
             </h2>
             <p className="z-30 pb-8 text-center">
                 Please, click to the{" "}
